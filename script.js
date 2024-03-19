@@ -1,14 +1,50 @@
 // Get a reference to the #add-employees-btn element
 const addEmployeesBtn = document.querySelector('#add-employees-btn');
 
+// initialize main employee array
+let employeeInfo = [];
+
 // Collect employee data
 const collectEmployees = function() {
-  // TODO: Get user input to create and return an array of employee objects
+  affirmer = window.prompt("Add a new employee? (y/n)");
+  if (affirmer == "n") {}
+  else if (affirmer == "y") {
+    
+    // variable to detect whether to finalize user input
+    stopper = false; 
+
+    while (stopper == false) {
+      // initialize temp variable to log object values
+      tempLogger = {};
+      tempLogger.firstName = window.prompt("First name?");
+      tempLogger.lastName = window.prompt("Last name?");
+      tempLogger.salary = +(window.prompt("Salary? (Numbers only)"));
+      // push object to main employee array
+      employeeInfo.push(tempLogger);
+      continueVerification = window.prompt("Add another employee? (y/n)")
+      // stop or continue process
+      if (continueVerification == "y") stopper = false;
+      else stopper = true;
+    }
+    return employeeInfo;
+  }
 }
 
 // Display the average salary
 const displayAverageSalary = function(employeesArray) {
-  // TODO: Calculate and display the average salary
+  // init salary variable
+  averageSalary = 0;
+  for (let i = 0; i < employeeInfo.length; i++) {
+    // add salaries
+    averageSalary += employeeInfo[i].salary;
+  }
+  // divide by emp count for avg
+  averageSalary /= employeeInfo.length;
+  // log
+  console.log(`Average Salary: $${averageSalary}`);
+  if (employeeInfo.length <= 1) plurality = "";
+  else plurality = "s";
+  console.log(`We have ${employeeInfo.length} employee${plurality}.`);
 }
 
 // Select a random employee
