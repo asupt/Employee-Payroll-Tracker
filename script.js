@@ -40,6 +40,7 @@ const displayAverageSalary = function(employeesArray) {
   }
   // divide by emp count for avg
   averageSalary /= employeeInfo.length;
+  averageSalary = averageSalary.toFixed(2);
   // log
   console.log(`Average Salary: $${averageSalary}`);
   if (employeeInfo.length <= 1) plurality = "";
@@ -49,7 +50,9 @@ const displayAverageSalary = function(employeesArray) {
 
 // Select a random employee
 const getRandomEmployee = function(employeesArray) {
-  // TODO: Select and display a random employee
+  console.log("Random employee:")
+  // generate random employee to pull info of
+  console.log(employeeInfo[Math.round(Math.random() * (employeeInfo.length - 1))]);
 }
 
 /*
