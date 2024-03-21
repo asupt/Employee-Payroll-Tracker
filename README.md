@@ -12,4 +12,4 @@ Sourced script.js located at root-level and with additional adjustments by mysel
 
 This assignment chiefly assesses our understanding of basic JavaScript logic.
 
-## Link to deployed application: https://asupt.github.io/code-refactor/
+## Link to deployed application: https://asupt.github.io/Employee-Payroll-Tracker/
